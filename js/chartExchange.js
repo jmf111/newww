@@ -108,8 +108,8 @@ function drawAnnular(){//先画一个饼图，与上面方法一样
         ctx.font="16px 微软雅黑";
         ctx.fillStyle="black";
         ctx.fillText(annotation[3],50,220);
-        ctx.fillText(data[0]+"天",200,220);
-        ctx.fillText("占比"+Math.round(data[0] / 365 * 100).toFixed(0)+"%",280,220);
+        ctx.fillText(data[1]+data[2]+"天",200,220);
+        ctx.fillText("占比"+Math.round((data[1]+data[2]) / 365 * 100).toFixed(0)+"%",280,220);
         
     }
     for(i=0;i<2;i++){//右边的小环
@@ -126,8 +126,8 @@ function drawAnnular(){//先画一个饼图，与上面方法一样
         ctx.font="16px 微软雅黑";
         ctx.fillStyle="black";
         ctx.fillText(annotation[4],50,260);
-        ctx.fillText(data[1]+data[2]+"天",200,260);
-        ctx.fillText("占比"+Math.round((data[1]+data[2]) / 365 * 100).toFixed(0)+"%",280,260);
+        ctx.fillText(data[0]+"天",200,260);
+        ctx.fillText("占比"+Math.round(data[0] / 365 * 100).toFixed(0)+"%",280,260);
         
     }
     //在两个小饼图中间再画两个白色的小饼图，形成环
@@ -139,6 +139,10 @@ function drawAnnular(){//先画一个饼图，与上面方法一样
         ctx.moveTo(300,100)
         ctx.arc(300,100,40,startPoint,startPoint-Math.PI*2,true);
         ctx.fill();
+        ctx.font="26px 微软雅黑";
+        ctx.fillStyle="#CCCCCC";
+        ctx.fillText(Math.round(data[0] / 365 * 100).toFixed(0)+"%",274,110);
+        ctx.fillText(Math.round((data[1]+data[2]) / 365 * 100).toFixed(0)+"%",74,110)
 }
 drawAnnular();
 var month = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二"];
