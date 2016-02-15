@@ -1,0 +1,39 @@
+ ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				
+				}
+			
+			.shape li {
+				display: inline-block;
+				cursor: pointer;
+				border: 2px solid white;
+				}
+			.shape li:hover{
+				border-bottom: 2px solid #666;
+			}
+			
+			#circle1{
+					
+					display: none;
+				}
+			#ring{
+				border: 1px solid #CCCCCC;
+				height: 300px;
+				width: 400px;
+			    float: left;
+			}
+			#form{
+				 float: left;
+				 border: 1px solid #CCCCCC;
+				 margin-left: 10px;
+				 height: 300px;
+				width: 400px;
+			}
+		   #bar{
+		   	display: none;
+		   }
+		   #lines{
+		   	margin-left: 320px;
+		   }
