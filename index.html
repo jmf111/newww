@@ -3,116 +3,25 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>图表交换</title>
+<link rel="stylesheet" type="text/css" href="css/chartExchange.css" />
 <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-	$("#bing").click(function(){
-		$("#circle").show();
-		$("#circle1").hide();
-		})
-		$("#huan").click(function(){
-		$("#circle").hide();
-		$("#circle1").show();
-		})	;
-	});
-</script>
-<style type="text/css">
-             ul {
-				list-style: none;
-				margin: 0;padding: 0;
-				}
-			
-			.shape li {
-				border: 1px solid #ccc;
-				padding: 10px;
-				display: inline-block;
-				cursor: pointer;
-				}
-			.shape li:hover{
-				background:#F90
-			}
-			#circle1{
-				display:none;
-				
-				}
-		    .form{
-				float:left;
-				height:18px;
-				width:20px;
-				cursor:pointer;
-	            
-				margin-right:10px;
-				}
-</style>
 </head>
 
 <body>
 <ul class="shape">
 			<li id="bing">饼图</li>
 			<li id="huan">环形图</li>
-		</ul>
+			<li id="lines">折线图</li>
+			<li id="bars">条形图</li>
+</ul>
+<div id="ring">
 <canvas id="circle" width="400" height="300">您的浏览器暂不支持Canvas</canvas>  
 <canvas id="circle1" width="400" height="300">您的浏览器暂不支持Canvas</canvas> 
-<ul class="aqi-chart-tooltip">
-         <div class="form" style="background:#000;"></div>
-			<li id="bad">严重污染</li>
-            <div class="form" style="background:red;"></div>
-			<li id="medium">中度污染</li>
-            <div class="form" style="background:blue;"></div>
-			<li id="light">轻度污染</li>
-            <div class="form" style="background:#00ff00;"></div>
-			<li id="good">优良</li>
-		</ul>
+</div>
+<div id="form">
+<canvas id="line" width="400" height="300">您的浏览器暂不支持Canvas</canvas>  
+<canvas id="bar" width="400" height="300">您的浏览器暂不支持Canvas</canvas>
+</div>
 </body>
-<script type="text/javascript">  
-var color = ["black","red","blue","#00ff00"];  
-var data = [80,100,45,135];  
-  
-function drawCircle(){  
-    var canvas = document.getElementById("circle");  
-    var ctx = canvas.getContext("2d");  
-    var startPoint = 1.5 * Math.PI;  
-    for(var i=0;i<data.length;i++){  
-        ctx.fillStyle = color[i];  
-        ctx.strokeStyle = color[i];  
-        ctx.beginPath();  
-        ctx.moveTo(200,150);  
-        ctx.arc(200,150,150,startPoint,startPoint-Math.PI*2*(data[i]/360),true);  
-        ctx.fill();  
-        ctx.stroke();  
-        startPoint -= Math.PI*2*(data[i]/360);  
-    }  
-}  
-drawCircle();
-  var color = ["black","red","blue","#00ff00"];  
-var data = [80,100,45,135];  
-  
-function Circle(){  
-    var canvas = document.getElementById("circle1");  
-    var ctx = canvas.getContext("2d");  
-    var startPoint = 1.5 * Math.PI;  
-    for(var i=0;i<data.length;i++){  
-        ctx.fillStyle = color[i];  
-        ctx.strokeStyle = color[i];  
-        ctx.beginPath();  
-        ctx.moveTo(200,150);  
-        ctx.arc(200,150,150,startPoint,startPoint-Math.PI*2*(data[i]/360),true);  
-        ctx.fill();  
-        ctx.stroke();  
-        startPoint -= Math.PI*2*(data[i]/360);	 
-    }  
-	for(var i=0;i<data.length;i++){  
-        ctx.fillStyle = "white";  
-        ctx.strokeStyle = "white";  
-        ctx.beginPath();  
-        ctx.moveTo(200,150);  
-        ctx.arc(200,150,100,startPoint,startPoint-Math.PI*2*(data[i]/360),true);  
-        ctx.fill();  
-        ctx.stroke();  
-        startPoint -= Math.PI*2*(data[i]/360);	 
-    }  
-}  
-Circle();
-  
-</script>
+<script type="text/javascript" src="js/chartExchange.js"></script>
 </html>
